@@ -1,0 +1,28 @@
+{
+  "name": "turn14-api-auth",
+  "version": "0.1.0",
+  "description": "Auth strategy for Turn14's OAuth API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "turn14",
+    "auth",
+    "oauth",
+    "auth",
+    "strategy",
+    "api",
+    "authentication",
+    "rest",
+    "auth"
+  ],
+  "author": "Tracy Adams",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}

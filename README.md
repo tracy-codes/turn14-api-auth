@@ -4,7 +4,8 @@ This package makes it easy to authenticate with Turn14's OAuth 2.0-based API. Th
 
 ### Usage:
 
-Please note that this module does return a Promise, so I recommend you use Async/Await to handle the Promise.
+- Please note that this module does return a Promise, so I recommend you use Async/Await to handle the Promise.
+- When requiring this module, you may call it whatever you like. There is only 1 function that is exported and it's set to the default
 
 ```javascript
 const turn14AuthProvider = require("turn14-api-auth");

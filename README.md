@@ -22,3 +22,8 @@ The following function will output `My Bearer Token is 123456789abcdefghijklmnop
 ### Real-World Example
 
 - TODO: Write this real-world example
+
+## Roadmap
+
+- Replace Axios package with native http module
+- Provide useful error messages & codes

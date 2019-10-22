@@ -22,8 +22,24 @@ The following function will output `My Bearer Token is 123456789abcdefghijklmnop
 
 ### Real-World Example
 
+The following function `getProductInventory` would be supplied with a correct Product ID from Turn14. From there, the function will perform the Oauth handshake with Turn14's API, then use the bearer token returned to make the GET request to the inventory API endpoint to get the product inventory for that specific product.
+
+I would give more detail and a more accurate example, but Turn14 has specific information that I must keep private amongst dealers, so this is about as far in as I can go.
+
 ```javascript
-const turn14AauthProvider = require("")
+const turn14AuthProvider = require("turn14-api-auth");
+const clientId = process.env.clientId;
+const clientSecret = process.env.clientSecret;
+const axios = require("axios");
+
+async function getProductInventory(productId) {
+  const bearerToken = await turn14AuthProvider(clientId, clientSecret);
+  const config = {
+    headers: { Authorization: `Bearer ${bearerToken}` }
+  };
+  const inventoryUrl = `https://api.turn14.com/v1/inventory/${productId}`;
+  return await axios.get(inventoryUrl, config);
+}
 ```
 
 ## Roadmap

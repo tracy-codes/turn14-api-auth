@@ -13,7 +13,7 @@ const clientId = process.env.clientId;
 const clientSecret = process.env.clientSecret;
 
 async function run() {
-  const bearerToken = turn14AuthProvider(clietnId, clientSecret);
+  const bearerToken = turn14AuthProvider(client, clientSecret);
   console.log(`My Bearer Token is ${bearerToken}`);
 }
 ```
@@ -22,7 +22,9 @@ The following function will output `My Bearer Token is 123456789abcdefghijklmnop
 
 ### Real-World Example
 
-- TODO: Write this real-world example
+```javascript
+const turn14AauthProvider = require("")
+```
 
 ## Roadmap
 

@@ -18,7 +18,7 @@ async function run() {
 }
 ```
 
-The following function will output `My Bearer Token is 123456789abcdefghijklmnopqrstuvwxyz` where the last string will be your bearer token. You can move on to implementing this in any way you'd like.
+The above function will output `My Bearer Token is 123456789abcdefghijklmnopqrstuvwxyz` where the last string will be your bearer token. You can move on to implementing this in any way you'd like.
 
 ### Real-World Example
 
@@ -41,6 +41,11 @@ async function getProductInventory(productId) {
   return await axios.get(inventoryUrl, config);
 }
 ```
+
+## Warnings
+Please note, the Turn14 API does have a rate limit. Please read through Turn14's API Usage Policy for more details on the rate limits, as it is very important that you abide by them.
+
+In my real world example above, you may notice that I am requesting a token within the `getProductInventory` function. This is great for an example or testing, but in the real world, you should have a separate function, or *service*, that runs in the background on a server somewhere out in the abyss of the *cloud*. This service should run periodically (my recommendation is once every 40-50 minutes) and insert the new bearer token into a database record. Every subsequent service you have running that makes requests to the Turn14 API should simply get that bearer token from your database and use that token, instead of obtaining a new token for each request. **This will surely get you rate limited/temporarily banned from using the Turn14 API**
 
 ## Roadmap
 
